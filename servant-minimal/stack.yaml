@@ -1,0 +1,19 @@
+resolver: lts-9.17
+
+
+packages:
+- '.'
+
+extra-deps:
+
+
+# stuff below is for servant 12. When uncommented, the exe errors out with a GHC bug
+
+# - servant-0.12
+# - servant-docs-0.12
+# - servant-server-0.12
+# - jose-0.6.0.3
+# - servant-client-0.12
+# - servant-client-core-0.12
+
+flags: {}
