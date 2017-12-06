@@ -1,4 +1,8 @@
+# this resolver is GHC 8.0.2
 resolver: lts-9.17
+
+# this resolver is GHC 8.2.2
+# resolver: nightly-2017-12-01
 
 
 packages:
@@ -6,14 +10,29 @@ packages:
 
 extra-deps:
 
+# resolver using servant 11 by default
 
-# stuff below is for servant 12. When uncommented, the exe errors out with a GHC bug
-
+# stuff below is for servant 12
 # - servant-0.12
-# - servant-docs-0.12
 # - servant-server-0.12
-# - jose-0.6.0.3
-# - servant-client-0.12
-# - servant-client-core-0.12
+
+# stuff for servant 10
+# - servant-server-0.10
+# - servant-0.10
+
+# stuff for servant 9
+# - aeson-1.0.2.1
+# - servant-0.9.1.1
+# - servant-server-0.9.1
 
 flags: {}
+
+#    | GHC Version |  Servant Version  |             build time (seconds)
+
+#        8.0.2     |         9         |                     7
+#        8.0.2     |        10         |                     8
+#        8.0.2     |        11         |                     8        
+#        8.0.2     |        12         |  simplifier ticks exhausted (with default fsimpl-tick-factor=100)
+#        8.0.2     |        12         |     (106 with --ghc-options=-fsimpl-tick-factor=101)
+#        8.2.2     |        11         |                    78
+#        8.2.2     |        12         |                    100
